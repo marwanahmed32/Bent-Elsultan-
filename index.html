@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#0b1114"/>
+<title>مطعم بنت السلطان — Nile Lounge | المنيل</title>
+<meta name="description" content="مطعم وكافيه بنت السلطان على النيل في المنيل — منيو، إطلالة، وحجز مباشر عبر واتساب."/>
+<style>
+:root{color-scheme:dark;--bg:#0b1114;--bg2:#121b1f;--bg3:#18252a;--ink:#ece3d3;--mut:#9aa8a8;--gold:#c8a45c;--teal:#3f8a8c;--wine:#8c3b3b;--line:#24343a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font-family:'Cairo','Segoe UI',Tahoma,Arial,sans-serif;line-height:1.8;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:3px 3px;z-index:50}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(11,17,20,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:10px 18px}
+nav b{color:var(--gold);font-size:18px;letter-spacing:.5px}
+nav a{color:var(--mut);text-decoration:none;font-size:13px;margin-inline-start:13px;transition:color .2s}
+nav a:hover{color:var(--gold)}
+.hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:70px 20px 110px;overflow:hidden;background:radial-gradient(ellipse at 50% 20%,#1d3a42 0%,#0b1114 62%)}
+.moon{position:absolute;top:9%;left:50%;transform:translateX(-50%);width:90px;height:90px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f4e6bf,#c8a45c 70%);box-shadow:0 0 70px 18px rgba(200,164,92,.28);animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translate(-50%,-10px)}}
+.hero small{position:relative;color:var(--gold);letter-spacing:4px;font-size:12px;margin-top:80px}
+.hero h1{position:relative;font-size:clamp(34px,8vw,66px);line-height:1.3;margin:12px 0;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{position:relative;max-width:540px;color:var(--mut);margin-bottom:28px}
+.btn{position:relative;display:inline-block;background:var(--gold);color:#14100a;padding:12px 28px;border-radius:40px;font-weight:800;text-decoration:none;margin:5px;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(200,164,92,.3)}
+.btn.o{background:transparent;color:var(--ink);border:1px solid var(--gold)}
+.waves{position:absolute;bottom:0;left:0;width:200%;height:90px;opacity:.5;animation:slide 14s linear infinite}
+.waves.b{height:70px;opacity:.9;animation-duration:22s;animation-direction:reverse}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{max-width:1000px;margin:0 auto;padding:60px 20px}
+.lbl{color:var(--teal);letter-spacing:3px;font-size:11px}
+h2{font-size:30px;margin:2px 0 6px;font-weight:800}
+h2:after{content:"";display:block;width:46px;height:2px;background:var(--gold);margin-top:8px}
+.sub{color:var(--mut);margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px}
+.card{background:linear-gradient(160deg,var(--bg2),var(--bg3));border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.card .ic{font-size:28px}.card h3{color:var(--gold);font-size:17px;margin:6px 0 4px}.card p{color:var(--mut);font-size:14px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tab{background:transparent;border:1px solid var(--line);color:var(--mut);padding:8px 20px;border-radius:30px;font:inherit;cursor:pointer;transition:.2s}
+.tab.on{background:var(--gold);color:#14100a;border-color:var(--gold);font-weight:800}
+.mi{display:flex;align-items:baseline;gap:10px;padding:13px 4px;border-bottom:1px dashed var(--line)}
+.mi span{font-weight:700;direction:ltr;unicode-bidi:plaintext}
+.mi i{flex:1;border-bottom:1px dotted #3a4b50;transform:translateY(-4px)}
+.mi b{color:var(--gold);white-space:nowrap}
+.mlist{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:10px 20px}
+.note{font-size:12px;color:var(--mut);margin-top:12px}
+.stat{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.stat div{flex:1;min-width:100px;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:14px;text-align:center}
+.stat b{display:block;font-size:24px;color:var(--gold)}.stat span{font-size:12px;color:var(--mut)}
+.rev{border-inline-start:3px solid var(--gold)}.rev p{color:var(--ink);font-size:14px}
+form{background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:24px;display:grid;gap:15px}
+label{font-size:12px;color:var(--mut);font-weight:700;display:block;margin-bottom:5px}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.day{flex:0 0 auto;min-width:72px;text-align:center;border:1px solid var(--line);border-radius:14px;padding:8px 6px;cursor:pointer;background:var(--bg);color:var(--ink);font:inherit}
+.day b{display:block;font-size:18px}.day span{font-size:11px;color:var(--mut)}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{border:1px solid var(--line);border-radius:30px;padding:7px 15px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.day.on,.slot.on{background:var(--gold);color:#14100a;border-color:var(--gold)}.day.on span{color:#14100a}
+.slot:disabled{opacity:.3;cursor:not-allowed;text-decoration:line-through}
+.prev{white-space:pre-wrap;background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px;font-size:13px;color:var(--mut)}
+.wa{background:#1f9d55;color:#fff;border:0;border-radius:40px;padding:14px;font:inherit;font-weight:800;cursor:pointer}
+.loc{background:linear-gradient(135deg,#143238,#0f2024);border:1px solid var(--line);border-radius:24px;padding:36px 22px;text-align:center}
+.loc p{color:var(--mut);margin-bottom:6px}
+.fab{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));inset-inline-start:16px;z-index:45;background:var(--gold);color:#14100a;text-decoration:none;font-weight:800;padding:12px 20px;border-radius:40px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:26px 20px 90px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<nav><b>🌙 بنت السلطان</b><div><a href="#menu">المنيو</a><a href="#cafe">الكافيه</a><a href="#book">احجز</a><a href="#visit">زورنا</a></div></nav>
+
+<header class="hero">
+  <div class="moon"></div>
+  <small>BENT EL-SULTAN · NILE LOUNGE</small>
+  <h1>سهرة <em>النيل</em><br/>وطعم يفضل في الذاكرة</h1>
+  <p>مطعم وكافيه على ضفة النيل في المنيل. أكل مصري بخبرة قرابة قرن، ومنيو إيطالي وفطار وساندويتشات، وقعدة هادية نهارًا وليلًا.</p>
+  <div><a class="btn" href="#book">📅 احجز طاولة</a><a class="btn o" href="#menu">استعرض المنيو</a></div>
+  <svg class="waves" viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#18252a" d="M0 45c120 30 240 30 360 0s240-30 360 0 240 30 360 0 240-30 360 0v45H0z"/></svg>
+  <svg class="waves b" viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#0b1114" d="M0 55c120-25 240-25 360 0s240 25 360 0 240-25 360 0 240 25 360 0v35H0z"/></svg>
+</header>
+
+<section id="why" class="rv">
+  <div class="lbl">WHY US</div><h2>ليه بنت السلطان؟</h2><p class="sub">أربع حاجات الزوار بيقولوها عننا</p>
+  <div class="grid">
+    <div class="card"><div class="ic">🌊</div><h3>إطلالة على النيل</h3><p>قعدة مفتوحة على النيل مناسبة للعشا مع الأصحاب أو العيلة.</p></div>
+    <div class="card"><div class="ic">🍗</div><h3>دجاج طري ومتتبّل</h3><p>الدجاج بولو والدجاج بالليمون من أكتر الأطباق اللي بتتمدح.</p></div>
+    <div class="card"><div class="ic">🥖</div><h3>عيش طازج</h3><p>العيش له سمعة لوحده وبيتقدم طازج.</p></div>
+    <div class="card"><div class="ic">🤝</div><h3>خدمة ودودة</h3><p>طاقم لطيف بيخلي الزيارة مريحة.</p></div>
+  </div>
+</section>
+
+<section id="menu" class="rv">
+  <div class="lbl">MENU</div><h2>المنيو</h2><p class="sub">نسخة أولية — الأسعار بالجنيه المصري</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="mlist" id="mlist"></div>
+  <p class="note">* الأطباق الرئيسية وأطباق البيض والإضافات الجانبية هتتضاف بعد مراجعة المنيو الأصلي. الأسعار قابلة للتحديث من المطعم.</p>
+</section>
+
+<section id="cafe" class="rv">
+  <div class="lbl">CAFÉ</div><h2>الكافيه · Nile Lounge</h2><p class="sub">مش بس أكل — مكان تقعد فيه ساعات على النيل</p>
+  <div class="grid">
+    <div class="card"><div class="ic">☕</div><h3>قهوة ومشروبات</h3><p>مشروبات ساخنة وباردة وعصاير طازجة زي البرتقال والليمون بالنعناع.</p></div>
+    <div class="card"><div class="ic">🍰</div><h3>حلويات</h3><p>الزوار بيمدحوا الحلويات خصوصًا في قعدات الليل.</p></div>
+    <div class="card"><div class="ic">🌆</div><h3>نهارًا وليلًا</h3><p>شمس ونيل نهارًا، وأضواء وهدوء بالليل.</p></div>
+    <div class="card"><div class="ic">👥</div><h3>لكل المناسبات</h3><p>خروجة أصحاب، عشا عائلي، أو لقاء هادي.</p></div>
+  </div>
+  <div class="stat"><div><b>~100</b><span>سنة خبرة</span></div><div><b>🌅</b><span>إطلالة نيل</span></div><div><b>🍝</b><span>منيو متنوع</span></div></div>
+</section>
+
+<section id="book" class="rv">
+  <div class="lbl">RESERVE</div><h2>احجز طاولتك</h2><p class="sub">اختار اليوم والميعاد وهنجهزلك رسالة جاهزة تتبعت على واتساب</p>
+  <form onsubmit="return false">
+    <div><label>اليوم</label><div class="days" id="days"></div></div>
+    <div><label>الميعاد</label><div class="slots" id="slots"></div></div>
+    <div class="row">
+      <div><label>الاسم</label><input id="nm" placeholder="اسمك"/></div>
+      <div><label>عدد الأفراد</label><select id="pp"></select></div>
+      <div><label>المكان</label><select id="zn"><option>أي مكان متاح</option><option>على النيل مباشرة</option><option>داخلي</option></select></div>
+    </div>
+    <div><label>طلب خاص (اختياري)</label><textarea id="nt" rows="2" placeholder="مناسبة، كرسي أطفال، تجهيز كيك..."></textarea></div>
+    <div class="prev" id="pv"></div>
+    <button class="wa" id="go">📲 ابعت طلب الحجز على واتساب</button>
+    <p class="note">الطلب مش حجز مؤكد — المطعم هيرد ويأكد التوافر.</p>
+  </form>
+</section>
+
+<section id="visit" class="rv">
+  <div class="loc"><h2 style="display:inline-block">زورنا</h2>
+    <p>📍 شارع عبد العزيز آل سعود، المنيل، القاهرة — داخل Nile Lounge</p>
+    <a class="btn" href="https://maps.app.goo.gl/y7i1sbUPQoPEeuAu8" target="_blank" rel="noopener">افتح في خرائط جوجل</a></div>
+</section>
+
+<a class="fab" href="#book">📅 احجز</a>
+<footer>© مطعم بنت السلطان — Nile Lounge · نسخة عرض أولية</footer>
+
+<script>
+var WA_NUMBER=""; // رقم المطعم بصيغة دولية بدون + مثال: 2010xxxxxxxx
+var MENU={
+ "الفطار":[["Classic Italian Breakfast",180],["Breakfast Bruschetta",145],["Vegetarian Omelette",135],["Mushroom Egg Omelette",155],["Appetizers with Sausages",210],["Breakfast Plate",210]],
+ "المكرونة":[["Penne Arrabbiata",180],["Sausage Carbonara",240],["Chicken Mac Rose",210],["Chicken Masala Pasta",210],["Penne Alfredo",225],["Seafood Bolognese",270],["Pasta Florentine",235],["Pasta Fresca",240],["Lasagna al Forno",245],["Farfalle Supreme",260]],
+ "الساندويتشات":[["Club Sandwich",230],["Double Burger 400g",255],["Chicken Wrap",220],["Crunchy Chicken",235],["Salmon Sandwich",185],["Focaccia",190],["Grilled Kofta Sandwich",250]]
+};
+var T=document.getElementById('tabs'),L=document.getElementById('mlist');
+function show(k){[].forEach.call(T.children,function(b){b.classList.toggle('on',b.textContent==k)});
+ L.innerHTML=MENU[k].map(function(m){return '<div class="mi"><span>'+m[0]+'</span><i></i><b>'+m[1]+' ج</b></div>'}).join('')}
+Object.keys(MENU).forEach(function(k,i){var b=document.createElement('button');b.className='tab';b.type='button';b.textContent=k;b.onclick=function(){show(k)};T.appendChild(b);if(!i)show(k)});
+
+var DN=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],MN=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+var TIMES=[];for(var h=12;h<=23;h++){TIMES.push(h+':00');TIMES.push(h+':30')}
+var selD=null,selT=null,D=document.getElementById('days'),S=document.getElementById('slots'),now=new Date();
+function f12(t){var p=t.split(':'),h=+p[0];return(h>12?h-12:h)+':'+p[1]+' '+(h>=12?'م':'ص')}
+function slots(){S.innerHTML='';var td=selD&&selD.toDateString()==new Date().toDateString(),n=new Date();
+ TIMES.forEach(function(t){var b=document.createElement('button');b.type='button';b.className='slot';b.textContent=f12(t);var p=t.split(':');
+ if(td&&(+p[0]*60+ +p[1])<=n.getHours()*60+n.getMinutes()+60)b.disabled=true;
+ b.onclick=function(){selT=t;[].forEach.call(S.children,function(x){x.classList.remove('on')});b.classList.add('on');upd()};S.appendChild(b)})}
+for(var i=0;i<14;i++){var d=new Date(now);d.setDate(now.getDate()+i);(function(d,i){var b=document.createElement('button');b.type='button';b.className='day';
+ b.innerHTML='<span>'+(i==0?'اليوم':DN[d.getDay()])+'</span><b>'+d.getDate()+'</b><span>'+MN[d.getMonth()]+'</span>';
+ b.onclick=function(){selD=d;selT=null;[].forEach.call(D.children,function(x){x.classList.remove('on')});b.classList.add('on');slots();upd()};D.appendChild(b)})(d,i)}
+var pp=document.getElementById('pp');for(var k=1;k<=12;k++)pp.innerHTML+='<option>'+k+'</option>';pp.value=2;
+function msg(){var nm=document.getElementById('nm').value.trim()||'—',nt=document.getElementById('nt').value.trim();
+ return 'السلام عليكم، أود حجز طاولة في مطعم بنت السلطان (Nile Lounge).\n👤 الاسم: '+nm+'\n📅 اليوم: '+DN[selD.getDay()]+' '+selD.getDate()+' '+MN[selD.getMonth()]+'\n⏰ الموعد: '+f12(selT)+'\n👥 عدد الأفراد: '+pp.value+'\n📍 المكان: '+document.getElementById('zn').value+(nt?'\n📝 ملاحظات: '+nt:'')+'\nبرجاء تأكيد التوافر. شكرًا 🌹'}
+function upd(){document.getElementById('pv').textContent=(selD&&selT)?msg():'اختار اليوم والميعاد لتظهر الرسالة'}
+['nm','nt','pp','zn'].forEach(function(id){document.getElementById(id).oninput=upd});
+document.getElementById('go').onclick=function(){if(!selD||!selT){alert('اختار اليوم والميعاد الأول');return}
+ window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg()),'_blank')};
+slots();upd();
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
