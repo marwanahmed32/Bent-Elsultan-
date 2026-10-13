@@ -115,8 +115,10 @@ footer{text-align:center;color:var(--mut);font-size:12px;padding:26px 20px 90px;
 <section id="book" class="rv">
   <div class="lbl">RESERVE</div><h2>احجز طاولتك</h2><p class="sub">اختار اليوم والميعاد وهنجهزلك رسالة جاهزة تتبعت على واتساب</p>
   <form onsubmit="return false">
-    <div><label>اليوم</label><div class="days" id="days"></div></div>
-    <div><label>الميعاد</label><div class="slots" id="slots"></div></div>
+    <div class="row">
+      <div><label>اليوم</label><select id="dsel"></select></div>
+      <div><label>الميعاد</label><select id="tsel"></select></div>
+    </div>
     <div class="row">
       <div><label>الاسم</label><input id="nm" placeholder="اسمك"/></div>
       <div><label>عدد الأفراد</label><select id="pp"></select></div>
@@ -152,15 +154,18 @@ Object.keys(MENU).forEach(function(k,i){var b=document.createElement('button');b
 
 var DN=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'],MN=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
 var TIMES=[];for(var h=12;h<=23;h++){TIMES.push(h+':00');TIMES.push(h+':30')}
-var selD=null,selT=null,D=document.getElementById('days'),S=document.getElementById('slots'),now=new Date();
+var selD=null,selT=null,DS=document.getElementById('dsel'),TS=document.getElementById('tsel'),now=new Date(),DAYS=[];
 function f12(t){var p=t.split(':'),h=+p[0];return(h>12?h-12:h)+':'+p[1]+' '+(h>=12?'م':'ص')}
-function slots(){S.innerHTML='';var td=selD&&selD.toDateString()==new Date().toDateString(),n=new Date();
- TIMES.forEach(function(t){var b=document.createElement('button');b.type='button';b.className='slot';b.textContent=f12(t);var p=t.split(':');
- if(td&&(+p[0]*60+ +p[1])<=n.getHours()*60+n.getMinutes()+60)b.disabled=true;
- b.onclick=function(){selT=t;[].forEach.call(S.children,function(x){x.classList.remove('on')});b.classList.add('on');upd()};S.appendChild(b)})}
-for(var i=0;i<14;i++){var d=new Date(now);d.setDate(now.getDate()+i);(function(d,i){var b=document.createElement('button');b.type='button';b.className='day';
- b.innerHTML='<span>'+(i==0?'اليوم':DN[d.getDay()])+'</span><b>'+d.getDate()+'</b><span>'+MN[d.getMonth()]+'</span>';
- b.onclick=function(){selD=d;selT=null;[].forEach.call(D.children,function(x){x.classList.remove('on')});b.classList.add('on');slots();upd()};D.appendChild(b)})(d,i)}
+function fillTimes(){var td=selD&&selD.toDateString()==new Date().toDateString(),n=new Date(),c=0;
+ TS.innerHTML='<option value="">— اختار الميعاد —</option>';selT=null;
+ TIMES.forEach(function(t){var p=t.split(':');if(td&&(+p[0]*60+ +p[1])<=n.getHours()*60+n.getMinutes()+60)return;TS.innerHTML+='<option value="'+t+'">'+f12(t)+'</option>';c++});
+ if(!c)TS.innerHTML='<option value="">لا مواعيد متبقية اليوم — اختار يوم آخر</option>'}
+DS.innerHTML='<option value="">— اختار اليوم —</option>';
+for(var i=0;i<14;i++){var d=new Date(now);d.setDate(now.getDate()+i);DAYS.push(d);
+ DS.innerHTML+='<option value="'+i+'">'+(i==0?'اليوم — ':i==1?'بكرة — ':'')+DN[d.getDay()]+' '+d.getDate()+' '+MN[d.getMonth()]+'</option>'}
+TS.innerHTML='<option value="">اختار اليوم الأول</option>';
+DS.onchange=function(){selD=DS.value===''?null:DAYS[+DS.value];if(selD)fillTimes();else{TS.innerHTML='<option value="">اختار اليوم الأول</option>';selT=null}upd()};
+TS.onchange=function(){selT=TS.value||null;upd()};
 var pp=document.getElementById('pp');for(var k=1;k<=12;k++)pp.innerHTML+='<option>'+k+'</option>';pp.value=2;
 function msg(){var nm=document.getElementById('nm').value.trim()||'—',nt=document.getElementById('nt').value.trim();
  return 'السلام عليكم، أود حجز طاولة في مطعم بنت السلطان (Nile Lounge).\n👤 الاسم: '+nm+'\n📅 اليوم: '+DN[selD.getDay()]+' '+selD.getDate()+' '+MN[selD.getMonth()]+'\n⏰ الموعد: '+f12(selT)+'\n👥 عدد الأفراد: '+pp.value+'\n📍 المكان: '+document.getElementById('zn').value+(nt?'\n📝 ملاحظات: '+nt:'')+'\nبرجاء تأكيد التوافر. شكرًا 🌹'}
@@ -168,7 +173,7 @@ function upd(){document.getElementById('pv').textContent=(selD&&selT)?msg():'ا�
 ['nm','nt','pp','zn'].forEach(function(id){document.getElementById(id).oninput=upd});
 document.getElementById('go').onclick=function(){if(!selD||!selT){alert('اختار اليوم والميعاد الأول');return}
  window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg()),'_blank')};
-slots();upd();
+upd();
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 </script>
